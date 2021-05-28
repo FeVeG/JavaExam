@@ -1,0 +1,21 @@
+
+{
+	public static void main (String args[])
+		throws InterruptedException, IOException   
+	{	Runtime rt = Runtime.getRuntime();
+		int i,j;
+		j = Integer.parseInt(args[0]);
+		String cmdargs [] = new String [3];
+		Process p[] = new Process[100];
+		cmdargs[0] = "java";
+		cmdargs[1] = "exf2020p”;
+		for( i=j; i>0 ; i-- )
+		{	cmdargs[2] = String.valueOf(i-1);
+			System.out.println(“i-1:” + (i-1));
+			p[i] = rt.exec(cmdargs);
+		}
+		// Ciclo de instrucciones, para esperar a que los procesos hijos
+		// terminen (en caso que existan).
+	}	
+}
+
